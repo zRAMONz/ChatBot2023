@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CHATBOT</title>
+</head>
+<body>
+	<div>
+		<img src="logo.png" alt="CHATBOT logo">
+	</div>
+	<div>
+		<form id="form">
+			<input type="text" id="input" placeholder="Peça ou pergunte qualquer coisa e clique no botão">
+			<button type="submit" id="button">Enviar</button>
+		</form>
+	</div>
+	<div id="response"></div>
+	<script>
+		const form = document.getElementById('form');
+		const input = document.getElementById('input');
+		const response = document.getElementById('response');
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			const text = input.value;
+			if (/[.,!?]/.test(text)) {
+				response.innerHTML = "Já vou poder te ajudar! Por favor, remova qualquer tipo de pontuação para que eu entenda.";
+			} else if (/[A-Z]/.test(text)) {
+				response.innerHTML = "Entendi! Mas por favor, remova qualquer letra maiúscula para que eu possa te responder.";
+			} else if (/[áéíóúãõâêîôû]/.test(text)) {
+				response.innerHTML = "Está quase lá, por favor, remova qualquer acento para que eu possa entender melhor a sua pergunta.";
+			} else if (text.toLowerCase().includes('aniel')) {
+				response.innerHTML = "Olá, Daniel! Sua resposta já foi gerada! Mas verifiquei pelo seu histórico de pesquisas que você está passando por queda de cabelo, ganho de peso e / ou impotência sexual. Você gostaria de ajuda para resolver algum desses problemas antes de receber a sua resposta?";
+			} else if (text.toLowerCase() === 'não') {
+				response.innerHTML = "Vai continuar careca gordo e broa então.";
+			} else if (text.toLowerCase().includes('amon')) {
+				response.innerHTML = "Ramon é o nome mais lindo que existe!";
+			} else {
+				response.innerHTML = "Perfeito! Já calculei a resposta para o seu pedido! Para vê-la, por favor, digite o seu nome.";
+			}
+		});
+
+		input.addEventListener('keydown', (event)
+			if (event.key === 'Enter') {
+				event.preventDefault();
+				form.dispatchEvent(new Event('submit'));
+			}
+		});
+	</script>
+</body>
+</html>
