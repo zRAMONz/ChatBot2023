@@ -59,7 +59,7 @@
 				response.innerHTML = "Já vou poder te ajudar! Por favor, remova qualquer tipo de pontuação para que eu entenda.";
 			} else if (/[A-Z]/.test(text)) {
 				response.innerHTML = "Entendi! Mas por favor, remova qualquer letra maiúscula para que eu possa te responder.";
-			} else if (/[áéíóúãõâêîôû]/.test(text)) {
+			} else if (/[áéíóúõâêîôû]/.test(text)) {
 				response.innerHTML = "Está quase lá, por favor, remova qualquer acento para que eu possa entender melhor a sua pergunta.";
 			} else if (text.toLowerCase().includes('aniel')) {
 							response.innerHTML = "Olá, Daniel! Sua resposta já foi gerada! Mas verifiquei pelo seu histórico de pesquisas que você está passando por queda de cabelo, ganho de peso e / ou impotência sexual. Você gostaria de ajuda para resolver algum desses problemas antes de receber a sua resposta?";
